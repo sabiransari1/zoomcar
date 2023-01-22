@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self Drive Car rental | Rent a Car |Car Hire | Zoomcar</title>
+    <link rel="stylesheet" href="./signin.css" />
+  </head>
+  <body>
+    <div id="loginBody">
+      <div id="loginCont">
+        <!-- =========================== firstLoginDiv -->
+        <div id="firstLoginDiv">
+          <div id="sildShow"></div>
+        </div>
+        <!-- =========================== secondLoginDiv -->
+        <!-- =========================== Signin -->
+        <div id="secondLoginDiv">
+          <div>
+            <form action="">
+              <h1>Signup</h1>
+              <input type="text" placeholder="Name" id="name" />
+              <input type="number" placeholder="Phone Number" id="number" />
+              <input type="email" placeholder="Email" id="email" />
+              <input type="password" placeholder="Password" id="password" />
+              <a href="./index.html"><button>Signin</button></a>
+              <p>
+                Already have account?<a href="./login.html" id="login">
+                  Login</a
+                >
+              </p>
+              <p>Or</p>
+              <a href=""
+                ><div id="facebook">
+                  <img src="./image/facebook.png" alt="" />
+                  <p>Signin with Facebook</p>
+                </div></a
+              >
+              <a href=""
+                ><div id="google">
+                  <img src="./image/google.png" alt="" />
+                  <p>Signin with Google</p>
+                </div></a
+              >
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="./index.js"></script> -->
+  <script>
+    // ==================== login or Signup display
+    // let secondLoginDiv = document.getElementById("secondLoginDiv");
+    // let secondLoginDiv1 = document.getElementById("secondLoginDiv1");
+    // let login = document.getElementById("login");
+    // let signin = document.getElementById("signin");
+
+    // login.addEventListener("click", () => {
+    //   secondLoginDiv.style.display = "block";
+    //   secondLoginDiv1.style.display = "none";
+    // });
+    // signin.addEventListener("click", () => {
+    //   secondLoginDiv.style.display = "none";
+    //   secondLoginDiv1.style.display = "block";
+    // });
+
+    // ==================== login javaScript
+    let formEl = document.querySelector("form");
+    let nameEl = document.getElementById("name");
+    let numberEl = document.getElementById("number");
+    let emailEl = document.getElementById("email");
+    let passwordEl = document.getElementById("password");
+
+    formEl.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // console.log(nameEl.value);
+      // console.log(numberEl.value);
+      // console.log(emailEl.value);
+      // console.log(passwordEl.value);
+      let userData = {
+        name: nameEl.value,
+        num: numberEl.value,
+        email: emailEl.value,
+        password : passwordEl.value,
+      }
+      if(nameEl.value === "" ||  numberEl.value === "" || emailEl.value === "" || passwordEl.value === "") {
+        alert("Please fill empty section");
+      }else {
+        alert("Signin Successful");
+      }
+      // nameEl.value = "";
+      // numberEl.value = "";
+      // emailEl.value = "";
+      // passwordEl.value = "";
+      userInfo.push(userData);
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    });
+    let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    if (userInfo == null) {
+      userInfo = [];
+    }
+  </script>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self Drive Car rental | Rent a Car |Car Hire | Zoomcar</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-weight: lighter;
+  font-family: Verdana;
+      }
+      #mapCont {
+        width: 100%;
+        height: 100vh;
+        background-color: white;
+        padding: 100px;
+    }
+    #mapCont > #first {
+        width: 70%;
+        margin: auto;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+      }
+      #mapCont > #first > div:nth-child(1) {
+        width: 40%;
+        height: 70px;
+        padding: 0 20px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px,
+          rgba(27, 31, 35, 0.2) 0px 0px 0px 1px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+      }
+      #mapCont > #first > div:nth-child(1) > div:nth-child(1) {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #10a310;
+        margin-right: 20px;
+    }
+    #mapCont > #first > div:nth-child(1) > div:nth-child(2) {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+      #mapCont > #first > div:nth-child(1) > div:nth-child(2) > a {
+        color: gray;
+        text-decoration: none;
+    }
+      #mapCont > #first > div:nth-child(2) {
+        width: 40%;
+        height: 70px;
+        padding: 0 20px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px,
+          rgba(27, 31, 35, 0.2) 0px 0px 0px 1px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+      }
+      #mapCont > #first > div:nth-child(2) > a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    #mapCont > #first > div:nth-child(2) > a > img {
+        margin-right: 20px;
+    }
+    #mapCont > #first > div:nth-child(2) > a > p {
+        color: gray;
+      }
+      /* #mapCont > #second {
+        width: 50%;
+        margin: auto;
+        background-color: white;
+        margin-top: 50px;
+    }
+    #mapCont > #second > div:nth-child(1) {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        font-weight: 900;
+        background-color:  #e5e8ec;
+        border-radius: 5px;
+      } */
+      #mapCont > #third {
+        width: 50%;
+        margin: auto;
+        background-color: white;
+        margin-top: 50px;
+    }
+    #mapCont > #third > div:nth-child(1) {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        font-weight: 900;
+        background-color:  #e5e8ec;
+        border-radius: 5px;
+    }
+    #mapCont > #fourth {
+        width: 50%;
+        margin: auto;
+        background-color: white;
+        margin-top: 50px;
+        border-radius: 5px;
+    }
+    #mapCont > #fourth >a> button{
+        width: 100%;
+        height: 50px;
+        background-color:  #10a310;
+        border-radius: 5px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 900;
+        color: white;
+        border: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="mapCont">
+      <div id="first">
+        <div>
+          <div></div>
+          <div><a href=""> Select your starting point </a></div>
+        </div>
+        <div>
+          <a href="https://www.google.com/maps/@28.4665356,77.1370109,15z">
+            <img src="./image/map.svg" alt="" />
+            <p>Select Location on Map</p>
+        </a>
+        </div>
+      </div>
+      <!-- <div id="second">
+        <div><P>RECENTLY SEARCHED LOCATIONS</P></div>
+      </div> -->
+      <div id="third">
+          <div>
+            <img src="./image/location.svg" alt=""/>
+            <P>RECENTLY SEARCHED LOCATION</P>
+          </div>
+        </div>
+      <div id="fourth">
+        <a href="./index.html">
+          <button>CONFIRM PICKUP LOCATION</button>
+        </a>
+      </div>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>

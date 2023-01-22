@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self Drive Car rental | Rent a Car |Car Hire | Zoomcar</title>
+    <link rel="stylesheet" href="./login.css" />
+  </head>
+  <body>
+    <div id="loginBody">
+      <div id="loginCont">
+        <!-- =========================== firstLoginDiv -->
+        <div id="firstLoginDiv">
+          <div id="sildShow"></div>
+        </div>
+        <!-- =========================== secondLoginDiv -->
+        <!-- =========================== Login -->
+        <div id="secondLoginDiv">
+          <div>
+            <form action="">
+              <h1>Login</h1>
+              <input type="email" placeholder="Email" id="email" />
+              <input type="password" placeholder="Password" id="password" />
+              <a href="">Forgot password?</a>
+              <a href="./index.html"><button>Login</button></a>
+              <p>
+                Don't have account?<a href="./signin.html" id="signin">
+                  Signin</a
+                >
+              </p>
+              <a href=""
+                ><div id="facebook">
+                  <img src="./image/facebook.png" alt="" />
+                  <p>Login with Facebook</p>
+                </div></a
+              >
+              <a href=""
+                ><div id="google">
+                  <img src="./image/google.png" alt="" />
+                  <p>Login with Google</p>
+                </div></a
+              >
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <script src="./index.js"></script> -->
+  <script>
+    // ==================== login or Signup display
+    // let secondLoginDiv = document.getElementById("secondLoginDiv");
+    // let secondLoginDiv1 = document.getElementById("secondLoginDiv1");
+    // let login = document.getElementById("login");
+    // let signin = document.getElementById("signin");
+
+    // login.addEventListener("click", () => {
+    //   secondLoginDiv.style.display = "block";
+    //   secondLoginDiv1.style.display = "none";
+    // });
+    // signin.addEventListener("click", () => {
+    //   secondLoginDiv.style.display = "none";
+    //   secondLoginDiv1.style.display = "block";
+    // });
+
+    // ==================== login javaScript
+    let formEl = document.querySelector("form");
+    let emailEl = document.getElementById("email");
+    let passwordEl = document.getElementById("password");
+
+    let userInfo = JSON.parse(localStorage.getItem("userInfo"));
+    if (userInfo == null) {
+      userInfo = [];
+    }
+    
+    function userCheck(userInfo) {
+      userInfo.forEach((e,i)=>{
+        formEl.addEventListener("submit", () => {
+          if(e.email ===  emailEl.value && e.password === passwordEl.value) {
+            alert("Login Successful");
+          }else {
+            alert("Incorrect Credentials");
+          }
+        });
+      });
+    };
+    userCheck(userInfo);
+  </script>
+</html>

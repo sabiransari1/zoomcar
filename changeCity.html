@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self Drive Car rental | Rent a Car |Car Hire | Zoomcar</title>
+    <link rel="stylesheet" href="./changeCity.css" />
+  </head>
+  <body>
+    <!-- ============================================== -->
+    <div id="hero">
+      <div id="cont">
+        <h1>Select your pickup country/city</h1>
+        <div id="selector">
+          <div id="selectField">
+            <img src="" alt="" id="changeImg" />
+            <p id="selectText">Select Country</p>
+            <img src="./image/expand.svg" alt="" id="expand" />
+          </div>
+          <ul id="list" class="hide">
+            <li class="options">
+              <img src="./image/egypt.png" alt="" />
+              <p>Egypt</p>
+            </li>
+            <li class="options">
+              <img src="./image/vietnam.png" alt="" />
+              <p>Vietnam</p>
+            </li>
+            <li class="options">
+              <img src="./image/indonesia.png" alt="" />
+              <p>Indonesia</p>
+            </li>
+            <li class="options">
+              <img src="./image/india.png" alt="" />
+              <p>India</p>
+            </li>
+          </ul>
+          <!-- ============================================== -->
+          <div id="selectField2">
+            <img src="./image/location.svg" alt="" />
+            <p id="selectText2">Select City</p>
+            <img src="./image/expand.svg" alt="" id="expand2" />
+          </div>
+          <ul id="list2" class="hide">
+            <li class="options2" id="egyptC">
+              <p>Cairo</p>
+            </li>
+            <li class="options2" id="vietnamC">
+              <p>Ho Chi Minh</p>
+            </li>
+            <li class="options2" id="indonesiaC">
+              <p>Jakarta</p>
+            </li>
+          </ul>
+          <!-- =================india list================ -->
+          <!-- =================india list================ -->
+          <!-- ============================================== -->
+          <div id="selectField3">
+            <img src="./image/language.svg" alt="" />
+            <p id="selectText3">Language</p>
+            <img src="./image/expand.svg" alt="" id="expand3" />
+          </div>
+          <ul id="list3" class="hide">
+            <li class="options3" id="egyptL">
+              <p>Arabic</p>
+            </li>
+            <li class="options3" id="vietnamL">
+              <p>Vietnamese</p>
+            </li>
+            <li class="options3" id="indonesiaL">
+              <p>Indonesian</p>
+            </li>
+            <li class="options3">
+              <p>English</p>
+            </li>
+          </ul>
+        </div>
+        <!-- ============================================== -->
+        <a href="./index.html"><button id="hideChangeCountry">CONFIRM</button></a>
+      </div>
+    </div>
+    <!-- ============================================== -->
+  </body>
+  <script>
+    // // ==================== change country
+    // // ============================================== first filed
+    const selectField = document.getElementById("selectField");
+    const selectText = document.getElementById("selectText");
+    const options = document.getElementsByClassName("options");
+    const list = document.getElementById("list");
+    const expand = document.getElementById("expand");
+    // =================================================
+    const egyptC = document.getElementById("egyptC");
+    const vietnamC = document.getElementById("vietnamC");
+    const indonesiaC = document.getElementById("indonesiaC");
+    const egyptL = document.getElementById("egyptL");
+    const vietnamL = document.getElementById("vietnamL");
+    const indonesiaL = document.getElementById("indonesiaL");
+    // =================================================
+
+    for (option of options) {
+      option.onclick = function () {
+        selectText.innerHTML = this.textContent;
+        if (this.textContent.trim() == "Egypt") {
+          egyptC.style.display = "block";
+          vietnamC.style.display = "none";
+          indonesiaC.style.display = "none";
+          egyptL.style.display = "block";
+          vietnamL.style.display = "none";
+          indonesiaL.style.display = "none";
+          selectText2.innerText = "Select City";
+          selectText3.innerText = "Language";
+        } else if (this.textContent.trim() == "Vietnam") {
+          egyptC.style.display = "none";
+          vietnamC.style.display = "block";
+          indonesiaC.style.display = "none";
+          egyptL.style.display = "none";
+          vietnamL.style.display = "block";
+          indonesiaL.style.display = "none";
+          selectText2.innerText = "Select City";
+          selectText3.innerText = "Language";
+        } else if (this.textContent.trim() == "Indonesia") {
+          egyptC.style.display = "none";
+          vietnamC.style.display = "none";
+          indonesiaC.style.display = "block";
+          egyptL.style.display = "none";
+          vietnamL.style.display = "none";
+          indonesiaL.style.display = "block";
+          selectText2.innerText = "Select City";
+          selectText3.innerText = "Language";
+        } else {
+        }
+        list.classList.toggle("hide");
+        expand.classList.toggle("rotate");
+      };
+    }
+    selectField.onclick = function () {
+      list.classList.toggle("hide");
+      expand.classList.toggle("rotate");
+    };
+    // ============================================== second filed
+    const selectField2 = document.getElementById("selectField2");
+    const selectText2 = document.getElementById("selectText2");
+    const options2 = document.getElementsByClassName("options2");
+    const list2 = document.getElementById("list2");
+    const expand2 = document.getElementById("expand2");
+    let chooseCityx = JSON.parse(localStorage.getItem("chooseCityx")) || "";
+    
+    for (option of options2) {
+      option.onclick = function () {
+        selectText2.innerHTML = this.textContent;
+            chooseCityx = this.textContent.trim();
+            localStorage.setItem("chooseCityx",JSON.stringify(chooseCityx));
+            list2.classList.toggle("hide");
+            expand2.classList.toggle("rotate");
+          };
+        }
+    selectField2.onclick = function () {
+      list2.classList.toggle("hide");
+      expand2.classList.toggle("rotate");
+    };
+    // ============================================== third filed
+    const selectField3 = document.getElementById("selectField3");
+    const selectText3 = document.getElementById("selectText3");
+    const options3 = document.getElementsByClassName("options3");
+    const list3 = document.getElementById("list3");
+    const expand3 = document.getElementById("expand3");
+    let chooseLangx = JSON.parse(localStorage.getItem("chooseLangx")) || "";
+    
+    for (option of options3) {
+      option.onclick = function () {
+        selectText3.innerHTML = this.textContent;
+        chooseLangx = this.textContent.trim();
+        localStorage.setItem("chooseLangx",JSON.stringify(chooseLangx));
+        list3.classList.toggle("hide");
+        expand3.classList.toggle("rotate");
+      };
+    }
+    selectField3.onclick = function () {
+      list3.classList.toggle("hide");
+      expand3.classList.toggle("rotate");
+    };
+
+    // ============================================== show change country
+    // const showChangeCountry = document.getElementById("showChangeCountry");
+    // const hero = document.getElementById("hero");
+    // const hideChangeCountry = document.getElementById("hideChangeCountry");
+
+    // showChangeCountry.addEventListener("click", () => {
+    //   hero.style.display = "flex";
+    // });
+    // hideChangeCountry.addEventListener("click", () => {
+    //   hero.style.display = "none";
+    // });
+   </script>
+</html>
