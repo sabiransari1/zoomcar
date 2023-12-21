@@ -14,7 +14,7 @@ In this project, I have utilized the following technologies:-
 Welcome and appreciate all contributions to the Zoomcar! Whether you want to report a bug, contribute code, provide suggestions, or improve the documentation, there are several ways you can get involved.
 
 ## Instructions
-To contribute to the Zoomcar, follow these steps:
+To contribute to the Zoomcar, follow these steps:-
 
 - Fork this repository to your own GitHub account
 - Clone the forked repository to your local machine
