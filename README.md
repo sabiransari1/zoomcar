@@ -1,4 +1,6 @@
-# Zoomcar - Zoomcar is an online Car Rental platform.
+# Zoomcar
+
+Zoomcar is an online Car Rental platform.
 
 ## Contributing
 Contributions are welcome! If you find any issues or want to add new features, please create a pull request and provide a detailed description of your changes.
